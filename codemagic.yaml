@@ -1,0 +1,13 @@
+workflows:
+  android:
+    name: Casa em Dia
+    environment:
+      java: 17
+    scripts:
+      - name: Compilar APK
+        script: |
+          curl -fsSL https://services.gradle.org/distributions/gradle-8.9-bin.zip -o /tmp/ced-gradle.zip
+          unzip -qo /tmp/ced-gradle.zip -d /tmp/ced
+          /tmp/ced/gradle-8.9/bin/gradle assembleDebug
+    artifacts:
+      - build/outputs/apk/debug/*.apk
