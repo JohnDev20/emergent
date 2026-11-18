@@ -4,6 +4,10 @@ plugins {
 }
 android {
     namespace = "com.johndev.casaemdia"
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
     compileSdk = 35
     defaultConfig {
         applicationId = "com.johndev.casaemdia"
